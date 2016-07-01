@@ -7,7 +7,7 @@ class StaticPageControllerTest < ActionDispatch::IntegrationTest
 # end
 
   test "should get home" do
-    get static_page_home_url
+    get root_path
     assert_response :success
     # assert_select "title", "Alicia Beylan"
   end
@@ -25,5 +25,9 @@ class StaticPageControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "About | Alicia Beylan"
 
   end
-
+  test "should get contact" do
+     get static_page_contact_url
+     assert_response :success
+     assert_select "title", "Contact | Alicia Beylan"
+   end
 end
